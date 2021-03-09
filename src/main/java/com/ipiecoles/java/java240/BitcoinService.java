@@ -6,7 +6,6 @@ public class BitcoinService {
 
     private Double rate = null;
     private Boolean forceRefresh = false;
-
     private WebPageManager webPageManager;
 
     public WebPageManager getWebPageManager (){
