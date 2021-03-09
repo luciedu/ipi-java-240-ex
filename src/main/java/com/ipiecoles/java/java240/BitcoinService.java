@@ -1,20 +1,18 @@
 package com.ipiecoles.java.java240;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 
+@Component
 public class BitcoinService {
 
     private Double rate = null;
     private Boolean forceRefresh = false;
+
+    @Autowired
     private WebPageManager webPageManager;
-
-    public WebPageManager getWebPageManager (){
-        return webPageManager;
-    }
-
-    public void setWebPageManager(WebPageManager webPageManager) {
-        this.webPageManager = webPageManager;
-    }
 
     /**
      * Méthode qui renvoie le cours du Bitcoin

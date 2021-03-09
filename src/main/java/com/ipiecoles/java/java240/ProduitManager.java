@@ -1,35 +1,24 @@
 package com.ipiecoles.java.java240;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class ProduitManager {
 
+
     private List<Produit> produits = new ArrayList<>();
+
+    @Autowired
     private WebPageManager webPageManager;
+
+    @Autowired
     private BitcoinService bitcoinService;
-
-    /**
-     * Getter & setter
-     */
-
-    public WebPageManager getWebPageManager (){
-        return webPageManager;
-    }
-
-    public void setWebPageManager(WebPageManager webPageManager) {
-        this.webPageManager = webPageManager;
-    }
-
-    public BitcoinService getBitcoinService() {
-        return bitcoinService;
-    }
-
-    public void setBitcoinService(BitcoinService bitcoinService) {
-        this.bitcoinService = bitcoinService;
-    }
 
     /**
      * Méthode qui demande les caractéristiques d'un nouveau produit

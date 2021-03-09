@@ -1,5 +1,6 @@
 package com.ipiecoles.java.java240;
 
+
 public class Produit {
 
     private String intitule;
