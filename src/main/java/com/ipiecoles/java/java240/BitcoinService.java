@@ -1,6 +1,7 @@
 package com.ipiecoles.java.java240;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -9,7 +10,9 @@ import java.io.IOException;
 public class BitcoinService {
 
     private Double rate = null;
-    private Boolean forceRefresh = false;
+
+    @Value("${bitcoinService.forceRefresh}")
+    private Boolean forceRefresh;
 
 
     // GETTER & SETTER //
