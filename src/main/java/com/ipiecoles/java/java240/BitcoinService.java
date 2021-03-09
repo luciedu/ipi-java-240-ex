@@ -11,9 +11,21 @@ public class BitcoinService {
     private Double rate = null;
     private Boolean forceRefresh = false;
 
+
+    // GETTER & SETTER //
+    public Boolean getForceRefresh() {
+        return forceRefresh;
+    }
+
+    public void setForceRefresh(Boolean forceRefresh) {
+        this.forceRefresh = forceRefresh;
+    }
+
     @Autowired
     private WebPageManager webPageManager;
 
+
+    // METHODS //
     /**
      * Méthode qui renvoie le cours du Bitcoin
      * @return le cours du bitcoin
@@ -42,10 +54,7 @@ public class BitcoinService {
      * @throws IOException si impossible d'accéder à la bourse
      */
     public Double getBitcoinPrice(Double prixEnEuro) throws IOException {
-        if(rate == null){
-            getBitcoinRate();
-        }
-        return prixEnEuro / rate;
+        return prixEnEuro /  getBitcoinRate();
     }
 
 }

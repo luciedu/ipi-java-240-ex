@@ -14,6 +14,10 @@ public class WebPageManager {
 
     private HashMap<String, String> cacheContent = new HashMap<>();
 
+
+
+
+    // METHODS //
     /**
      * Fait une requête GET à l'url passée en paramètre
      * @param address URL à contacter

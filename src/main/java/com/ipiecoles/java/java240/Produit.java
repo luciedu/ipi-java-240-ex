@@ -4,7 +4,6 @@ package com.ipiecoles.java.java240;
 public class Produit {
 
     private String intitule;
-
     private Double prixEuro;
 
     public Produit(String intitule, Double prixEuro) {
@@ -12,6 +11,7 @@ public class Produit {
         this.prixEuro = prixEuro;
     }
 
+    // GETTER & SETTER //
     public String getIntitule() {
         return intitule;
     }
@@ -28,6 +28,8 @@ public class Produit {
         this.prixEuro = prixEuro;
     }
 
+
+    // METHODS //
     @Override
     public String toString() {
         return "Produit : " +
