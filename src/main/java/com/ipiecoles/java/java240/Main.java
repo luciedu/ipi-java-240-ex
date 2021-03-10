@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -15,12 +16,11 @@ public class Main implements CommandLineRunner {
     @Autowired
     ProduitManager pm;
 
+    @Resource(name="bitcoinServiceWithoutCache")
+    BitcoinService bitcoinService;
+
     @Override
     public void run(String... args) throws Exception {
-
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BitcoinService bitcoinService = ctx.getBean("bitcoinServiceWithoutCache", BitcoinService.class);
-        ProduitManager pm = ctx.getBean(ProduitManager.class);
 
         System.out.println("Bienvenue !");
         while(true){
